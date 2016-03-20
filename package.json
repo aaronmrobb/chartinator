@@ -1,0 +1,26 @@
+{
+  "name": "chartinator",
+  "version": "1.0.0",
+  "description": "Terminator for graphing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronmrobb/chartinator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaronmrobb/chartinator/issues"
+  },
+  "homepage": "https://github.com/aaronmrobb/chartinator#readme",
+  "devDependencies": {
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "d3": "^3.5.16"
+  }
+}
