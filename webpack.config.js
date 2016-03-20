@@ -4,7 +4,6 @@ const path = require('path')
 module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
     './src/index.js'
   ],
   module: {
@@ -12,10 +11,6 @@ module.exports = {
       test: /\.js?$/,
       exclude: /node_modules/,
       loader: 'babel'
-    },
-    {
-      test: /\.scss$/,
-      loader: 'style!css!sass'
     }
   ]},
   resolve: {
@@ -29,7 +24,5 @@ module.exports = {
   devServer: {
     contentBase: './dist'
   },
-  sassLoader: {
-     includePaths: [path.resolve(__dirname, "./styles")]
-   }
+
 }
