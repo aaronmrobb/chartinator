@@ -3,6 +3,8 @@ import request from 'superagent'
 
 const w = 300
 const h = 150
+
+const svg = d3.select('body').append('svg')
 // const padding = 2
 // const dataSet = [5, 10, 14, 20, 25, 2, 23, 12, 7]
 // const svg = d3.select('body').append('svg')
