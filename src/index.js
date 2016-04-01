@@ -9,6 +9,14 @@ const svg = d3.select('body').append('svg')
                 .attr('width', w)
                 .attr('height', h)
 
+function colorPicker(v) {
+  if (v <= 20) {
+    return '#666666'
+  } else {
+    return '#FF0033'
+  }
+}
+
 svg.selectAll('rect')
   .data(dataSet)
   .enter()
@@ -16,8 +24,8 @@ svg.selectAll('rect')
     .attr({x: (d, i) =>  i * (w / dataSet.length),
           y: d => h - (d * 4),
           width: w / dataSet.length - padding,
-          height: (d) => d * 4,
-          fill: (d) => 'rgb(' + (d * 10) + ", 0, 0)"
+          height: d => d * 4,
+          fill: d => colorPicker(d)
         })
 
     // .attr('y',
