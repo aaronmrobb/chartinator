@@ -3,19 +3,45 @@ import request from 'superagent'
 
 const w = 700
 const h = 300
+
+const monthlySales = [
+  {"month": 10, "sales": 200},
+  {"month": 20, "sales": 140},
+  {"month": 30, "sales": 200},
+  {"month": 40, "sales": 130},
+  {"month": 50, "sales": 125},
+  {"month": 60, "sales": 220},
+  {"month": 70, "sales": 90},
+  {"month": 80, "sales": 60},
+  {"month": 90, "sales": 130},
+  {"month": 100, "sales": 70}
+]
+
+//KPI
+function salesKPI(d) {
+  if (d >= 250) {
+    return "@"
+  }
+}
+
+
+const svg = d3.select('body').append('svg').attr({
+  width: w,
+  height: h
+})
+
+const dots = svg.selectAll('circle')
+                .data(monthlySales)
+                .enter()
+                .append('circle')
+                .attr({
+                  cx: d => d.month * 3,
+                  cy: d => h - d.sales,
+                  r: 5,
+                  'fill': "#666666"
+                })
 //
-// const monthlySales = [
-//   {"month": 10, "sales": 200},
-//   {"month": 20, "sales": 140},
-//   {"month": 30, "sales": 200},
-//   {"month": 40, "sales": 130},
-//   {"month": 50, "sales": 125},
-//   {"month": 60, "sales": 220},
-//   {"month": 70, "sales": 90},
-//   {"month": 80, "sales": 60},
-//   {"month": 90, "sales": 130},
-//   {"month": 100, "sales": 70}
-// ]
+
 //
 // const lineFun = d3.svg.line()
 //                   .x(d => d.month*5)
