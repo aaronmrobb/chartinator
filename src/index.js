@@ -19,9 +19,7 @@ const monthlySales = [
 
 //KPI
 function salesKPI(d) {
-  if (d >= 250) {
-    return "@"
-  }
+  return d <= 200 ? '' : ''
 }
 
 
